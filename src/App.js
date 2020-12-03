@@ -1,5 +1,7 @@
 import './App.css';
 import {Bar,Line} from 'react-chartjs-2';
+import {Row,Col,Container} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 function App() {
@@ -14,7 +16,7 @@ const genData = () => ({
     {
       type: 'line',
       label: 'Variación',
-      borderColor: 'green',
+      borderColor: '#129048',
       borderWidth: 2,
       fill: false,
       data: myTemp,
@@ -22,7 +24,7 @@ const genData = () => ({
     {
       type: 'bar',
       label: 'Por día en Millones de USD',
-      backgroundColor: 'blue',
+      backgroundColor: '#012b99',
       data: myTemp,
       borderColor: 'white',
       borderWidth: 2,
@@ -44,9 +46,20 @@ const options2 = {
   
   return (
     <div className="App">
-      <header className="App-header">        
+      <header className="App-header" style={{paddingLeft:'5%',paddingRight:'5%'}}>        
         <h1>Demo Gráfico ChartJS</h1>
-        <Bar data={genData} options={options2} />
+          <div style={{border:'1px solid darkgray', width:'100%',height:'100%', padding:15}}>
+          <Container>
+          <Row>
+            <Col xs={3} md={3} lg={3}><span style={{fontSize:12,color:"red"}}>Sesión cerrada</span></Col>
+            <Col xs={6} md={6} lg={6}><span style={{fontSize:10}}>Falta 1 días 7 horas 1 minutos para abrir la sesión|Hora actual 01:29am</span></Col>
+            <Col xs={3} md={3} lg={3}><span><Button style={{fontSize:10}} variant="success">VER TABLA COMPLETA</Button></span></Col>
+          </Row>
+          <Row>
+          <Col><Bar data={genData} options={options2} /></Col>
+          </Row>
+          </Container>
+          </div>
       </header>
     </div>
   );
