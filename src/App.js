@@ -5,6 +5,8 @@ import { Button } from 'react-bootstrap';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import ClearAllIcon from '@material-ui/icons/ClearAll';
 
 
 function App() {
@@ -47,25 +49,51 @@ function App() {
     },
   }
 
+  const onClicAcumulado = ()=>{
+    document.getElementById("tabla1").style.display = "none";
+    document.getElementById("tabla2").style.display = "";
+    document.getElementById("grafico1").style.display = "none";
+    document.getElementById("grafico2").style.display = "";
+  }
+
+  const onClicdelDia = ()=>{
+    document.getElementById("tabla1").style.display = "";
+    document.getElementById("tabla2").style.display = "none";
+    document.getElementById("grafico1").style.display = "";
+    document.getElementById("grafico2").style.display = "none";
+  }
+
   return (
     <div className="App">
       <header className="App-header" style={{ paddingLeft: '5%', paddingRight: '5%' }}>
         <h1>Demo Gráfico ChartJS</h1>
-        <div style={{ border: '1px solid darkgray', width: '100%', height: '100%', padding: 15 }}>
+        <div style={{ border: '1px solid darkgray', width: '65%', height: '100%', padding: 15 }}>
           <Container>
             <Row>
               <Col xs={3} md={3} lg={3}><span style={{ fontSize: 12, color: "red" }}>Sesión cerrada</span></Col>
               <Col xs={6} md={6} lg={6}><span style={{ fontSize: 10 }}>Falta 1 días 7 horas 1 minutos para abrir la sesión|Hora actual 01:29am</span></Col>
-              <Col xs={3} md={3} lg={3}><span><Button style={{ fontSize: 10 }} variant="success">VER TABLA COMPLETA</Button></span></Col>
+              <Col xs={3} md={3} lg={3}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="success">VER TABLA COMPLETA</Button></span></Col>
             </Row>
             <Row>
-              <Col><Bar data={genData} options={options2} /></Col>
+              <Col id="grafico1"><Bar data={genData} options={options2} /></Col>
+              <Col id="grafico2" style={{display:'none'}}>*****<Bar data={genData} options={options2} style={{display:'none'}}/>  </Col>
             </Row>
           </Container>
         </div>
-
+        <hr></hr>
         <>
-          <div className="table-responsive">
+        <Container style={{ border: '1px solid darkgray', width: '65%', height: '100%', padding: 15 }}>
+          <div>
+            <Row>
+              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="success" onClick={onClicdelDia}>Del dia</Button></span></Col>
+              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="success" onClick={onClicAcumulado}>Acumulado</Button></span></Col>
+              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">Mas negociados</Button></span></Col>
+              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">Reajustes de tasas</Button></span></Col>
+              <Col xs={4} md={4} lg={4}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light"><spam><TrendingUpIcon /><ClearAllIcon /></spam></Button></span></Col>
+            </Row>
+            
+          </div>
+          <div className="table-responsive" id="tabla1">
             <table className="table table-hover">
               <thead>
                 <tr>
@@ -104,6 +132,56 @@ function App() {
             </table>
 
           </div>
+
+          <div className="table-responsive" id="tabla2" style={{display:'none'}}>
+            <table className="table table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Julio 25(USD $)</th>
+                  <th>Julio 26(USD $)</th>
+                  <th>Variacion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="table-active">Primario Privado</td>
+                  <td className="table-active">$15,000,000</td>
+                  <td className="table-secondary">$15,000,000</td>
+                  <td className="table-success">5% <spam><ArrowDropUpIcon /></spam></td>
+                </tr>
+                <tr>
+                  <td className="table-active">Primario Privado</td>
+                  <td className="table-active">$15,000,000</td>
+                  <td className="table-secondary">$15,000,000</td>
+                  <td className="table-danger">-5% <spam><ArrowDropDownIcon /></spam></td>
+                </tr>
+                <tr>
+                  <td className="table-active">Primario Privado</td>
+                  <td className="table-active">$15,000,000</td>
+                  <td className="table-secondary">$15,000,000</td>
+                  <td className="table-primary">0%<spam><ArrowRightIcon /></spam></td>
+                </tr>
+                <tr>
+                  <td className="table-active">Primario Privado</td>
+                  <td className="table-active">$15,000,000</td>
+                  <td className="table-secondary">$15,000,000</td>
+                  <td className="table-success">5% <spam><ArrowDropUpIcon /></spam></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          
+          <div>
+            <Row>
+            <Col xs={4} md={4} lg={4}><spam>Total</spam></Col>
+            <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">000 000 000</Button></span></Col>
+            <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">000 000 000</Button></span></Col>
+            <Col xs={4} md={4} lg={4}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="primary">15%</Button></span></Col>
+            </Row>
+          </div>
+          </Container>
         </>
       </header>
     </div>
