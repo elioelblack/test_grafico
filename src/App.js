@@ -94,7 +94,7 @@ function App() {
             
           </div>
           <div className="table-responsive" id="tabla1">
-            <table className="table table-hover">
+            <table className="table table-hover table-sm">
               <thead>
                 <tr>
                   <th></th>
