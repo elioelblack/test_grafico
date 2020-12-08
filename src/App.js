@@ -66,7 +66,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header" style={{ paddingLeft: '5%', paddingRight: '5%' }}>
-        <h1>Demo Gráfico ChartJS</h1>
+        <h1></h1>
         <div style={{ border: '1px solid darkgray', width: '65%', height: '100%', padding: 15 }}>
           <Container>
             <Row>
@@ -182,6 +182,7 @@ function App() {
             </Row>
           </div>
           </Container>
+          <hr></hr>
         </>
       </header>
     </div>
