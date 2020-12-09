@@ -72,9 +72,9 @@ function App() {
             <Row>
               <Col xs={3} md={3} lg={3}><span style={{ fontSize: 12, color: "red" }}>Sesión cerrada</span></Col>
               <Col xs={6} md={6} lg={6}><span style={{ fontSize: 10 }}>Falta 1 días 7 horas 1 minutos para abrir la sesión|Hora actual 01:29am</span></Col>
-              <Col xs={3} md={3} lg={3}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="success">VER TABLA COMPLETA</Button></span></Col>
+              <Col xs={3} md={3} lg={3}><span><Button style={{ fontSize: 10,width: "100%" }} variant="success">VER TABLA COMPLETA</Button></span></Col>
             </Row>
-            <Row>
+            <Row style={{ background: "#fbfbfb" }}>
               <Col id="grafico1"><Bar data={genData} options={options2} /></Col>
               <Col id="grafico2" style={{display:'none'}}>*****<Bar data={genData} options={options2} style={{display:'none'}}/>  </Col>
             </Row>
@@ -85,11 +85,12 @@ function App() {
         <Container style={{ border: '1px solid darkgray', width: '65%', height: '100%', padding: 15 }}>
           <div>
             <Row>
-              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="success" onClick={onClicdelDia}>Del dia</Button></span></Col>
-              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="success" onClick={onClicAcumulado}>Acumulado</Button></span></Col>
-              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">Mas negociados</Button></span></Col>
-              <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">Reajustes de tasas</Button></span></Col>
-              <Col xs={4} md={4} lg={4}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light"><spam><TrendingUpIcon /><ClearAllIcon /></spam></Button></span></Col>
+              <div className="btn-group"><Col xs={12} md={12} lg={12}><span><Button className="button-enable" onClick={onClicdelDia}>Del dia</Button></span></Col></div>
+              <div className="btn-group"><Col xs={12} md={12} lg={12}><span><Button className="button-enable" onClick={onClicAcumulado}>Acumulado</Button></span></Col></div>
+              <div className="btn-group"><Col xs={12} md={12} lg={12}><span><Button className="button-enable">Mas negociados</Button></span></Col></div>
+              <div className="btn-group"><Col xs={12} md={12} lg={12}><span><Button className="button-enable">Mercado integrado</Button></span></Col></div>
+              <div className="btn-group"><Col xs={12} md={12} lg={12}><span><Button className="button-enable">Reajustes de tasas</Button></span></Col></div>
+              <div className="btn-group"><Col xs={12} md={12} lg={12}><spam><Button className="button-enable"><TrendingUpIcon /><ClearAllIcon /></Button></spam></Col></div>
             </Row>
             
           </div>
@@ -134,7 +135,7 @@ function App() {
           </div>
 
           <div className="table-responsive" id="tabla2" style={{display:'none'}}>
-            <table className="table table-hover">
+            <table className="table table-hover table-sm">
               <thead>
                 <tr>
                   <th></th>
@@ -175,10 +176,10 @@ function App() {
           
           <div>
             <Row>
-            <Col xs={4} md={4} lg={4}><spam>Total</spam></Col>
-            <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">000 000 000</Button></span></Col>
-            <Col xs={2} md={2} lg={2}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="light">000 000 000</Button></span></Col>
-            <Col xs={4} md={4} lg={4}><span><Button style={{ fontSize: 10,whiteSpace:"initial" }} variant="primary">15%</Button></span></Col>
+            <Col xs={4} md={4} lg={4}><strong>Total</strong></Col>
+            <Col xs={2} md={2} lg={2}><span><Button className="button-enable">000 000 000</Button></span></Col>
+            <Col xs={2} md={2} lg={2}><span><Button className="button-enable">000 000 000</Button></span></Col>
+            <Col xs={4} md={4} lg={4}><span><Button className="button-prt">15%</Button></span></Col>
             </Row>
           </div>
           </Container>

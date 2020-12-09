@@ -25,6 +25,56 @@
   color: rgb(29, 28, 28);
 }
 
+.button-enable {
+  background: #ffffff;
+  color: #BDBDBD;
+  border-color: #BDBDBD;
+  border-radius: 6px;
+  position: static;
+  width: auto;
+  height: auto;
+  left: 0px;
+  top: 0px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.button-enable:hover {
+  background: #139148;
+  border-color: #139148;
+  border-radius: 6px;
+  width: auto;
+  height: auto;
+}
+
+.button-enable:active {
+  background: #139148!important;
+  border-color: #139148!important;
+}
+
+.button-enable:focus {
+  box-shadow: 0 0 0 0.1rem rgb(19 145 72)!important;
+}
+
+.button-prt {
+  background: #002b99;
+  color: #ffffff;
+  border-color: #002b99;
+  border-radius: 6px;
+  width: 30%;
+  height: auto;
+  left: 0px;
+  top: 0px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+
 .App-link {
   color: #61dafb;
 }
