@@ -94,85 +94,80 @@ function App() {
             </Row>
             
           </div>
-          <div className="table-responsive" id="tabla1">
-            <table className="table table-hover table-sm">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Julio 24(USD $)</th>
-                  <th>Julio 25(USD $)</th>
-                  <th>Variacion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-success">5% <spam><ArrowDropUpIcon /></spam></td>
-                </tr>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-danger">-5% <spam><ArrowDropDownIcon /></spam></td>
-                </tr>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-primary">0%<spam><ArrowRightIcon /></spam></td>
-                </tr>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-success">5% <spam><ArrowDropUpIcon /></spam></td>
-                </tr>
-              </tbody>
-            </table>
+          <div id="tabla1" style={{ display: 'none' }}>
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4}></Col>
+                <Col xs={4} md={4} lg={4} style={{ fontSize: 10, fontWeight: 'bold' }}>Julio 25(USD $)</Col>
+                <Col style={{ fontSize: 10, fontWeight: 'bold' }}>Julio 26(USD $)</Col>
+                <Col style={{ fontSize: 10, fontWeight: 'bold' }}>Variación</Col>
+              </Row>
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
 
-          </div>
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#FFDEDE', textAlign: 'right' }}><span style={{ color: '#EB5757', fontSize: 10 }}>-5% <ArrowDropDownIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
 
-          <div className="table-responsive" id="tabla2" style={{display:'none'}}>
-            <table className="table table-hover table-sm">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Julio 25(USD $)</th>
-                  <th>Julio 26(USD $)</th>
-                  <th>Variacion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-success">5% <spam><ArrowDropUpIcon /></spam></td>
-                </tr>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-danger">-5% <spam><ArrowDropDownIcon /></spam></td>
-                </tr>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-primary">0%<spam><ArrowRightIcon /></spam></td>
-                </tr>
-                <tr>
-                  <td className="table-active">Primario Privado</td>
-                  <td className="table-active">$15,000,000</td>
-                  <td className="table-secondary">$15,000,000</td>
-                  <td className="table-success">5% <spam><ArrowDropUpIcon /></spam></td>
-                </tr>
-              </tbody>
-            </table>
+              <Row className="justify-content-md-center" style={{ marginBottom: 10, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#D9E9FF', textAlign: 'right' }}><span style={{ color: '#002B98', fontSize: 10 }}>0% <ArrowRightIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
 
-          </div>
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
+
+            </div>
+
+            <div id="tabla2" style={{ display: 'none' }}>
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4}></Col>
+                <Col xs={4} md={4} lg={4} style={{ fontSize: 10, fontWeight: 'bold' }}>Semana 1(USD $)</Col>
+                <Col style={{ fontSize: 10, fontWeight: 'bold' }}>Semana 2(USD $)</Col>
+                <Col style={{ fontSize: 10, fontWeight: 'bold' }}>Variación</Col>
+              </Row>
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#FFDEDE', textAlign: 'right' }}><span style={{ color: '#EB5757', fontSize: 10 }}>-5% <ArrowDropDownIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 10, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#D9E9FF', textAlign: 'right' }}><span style={{ color: '#002B98', fontSize: 10 }}>0% <ArrowRightIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
+                <Col className="colgris3">$15,000,000</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+              </Row>
+
+            </div>
+          
           
           <div>
             <Row>

@@ -87,3 +87,38 @@
     transform: rotate(360deg);
   }
 }
+
+.colgris{
+  background-color: #F2F2F2;
+  height: 27px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding-top: 5px;
+  font-size: 10px;
+}
+.colgris2{
+  height: 27px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #F2F2F2;
+  padding-top: 5px;
+  font-size: 10px;
+}
+
+.colgris3{
+  height: 27px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #e0e0e0;
+  padding-top: 5px;
+  font-size: 10px;
+}
+
+.colgris4{
+  height: 27px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #D9E9FF;
+  padding-top: 5px;
+  font-size: 10px;
+}
