@@ -1,12 +1,20 @@
 import './App.css';
 import { Bar, Line } from 'react-chartjs-2';
 import { Row, Col, Container } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Button,ButtonGroup, ToggleButton,ToggleButtonGroup } from 'react-bootstrap';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
+import React, { useEffect, useState } from "react";
+// get our fontawesome imports
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { faSortDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function App() {
@@ -63,6 +71,14 @@ function App() {
     document.getElementById("grafico2").style.display = "none";
   }
 
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
+
+  const radios = [
+    { name: '', value: '1' },
+    { name: '', value: '2' },
+  ];
+
   return (
     <div className="App">
       <header className="App-header" style={{ paddingLeft: '5%', paddingRight: '5%' }}>
@@ -90,12 +106,16 @@ function App() {
             <Col className="col-align-izq col-md-auto"><span><Button className="button-enable">Mas negociados</Button></span></Col>
             <Col className="col-align-izq col-md-auto"><span><Button className="button-enable">Mercado integrado</Button></span></Col>
             <Col className="col-align-izq col-md-auto"><span><Button className="button-enable">Reajustes de tasas</Button></span></Col>
-            <Col xs={4} md={4} lg={4} className="col-align-der"><spam><Button style={{ borderRadius: "3px", height: "32px"}} className="button-enable"><TrendingUpIcon /></Button>
-                <Button style={{ borderRadius: "3px", height: "32px"}} className="button-enable"><ClearAllIcon /></Button></spam></Col>
+            <Col xs={3} md={3} lg={3} className="col-align-der" style={{ paddingLeft: 112 }}>
+              <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+              <ToggleButton value={1} className="active-chk"><TrendingUpIcon /></ToggleButton>
+              <ToggleButton value={3} className="active-chk-2"><ClearAllIcon /></ToggleButton>
+              </ToggleButtonGroup>
+            </Col>
             </Row>
             
           </div>
-          <div id="tabla1" style={{ display: 'none' }}>
+          <div id="tabla1" style={{ display: '' }}>
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4}></Col>
                 <Col xs={4} md={4} lg={4} style={{ fontSize: 10, fontWeight: 'bold' }}>Julio 25(USD $)</Col>
@@ -106,28 +126,28 @@ function App() {
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#FFDEDE', textAlign: 'right' }}><span style={{ color: '#EB5757', fontSize: 10 }}>-5% <ArrowDropDownIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#FFDEDE', textAlign: 'right' }}><span style={{ color: '#EB5757', fontSize: 10 }}>-5% <FontAwesomeIcon icon={faCaretDown} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 10, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#D9E9FF', textAlign: 'right' }}><span style={{ color: '#002B98', fontSize: 10 }}>0% <ArrowRightIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#D9E9FF', textAlign: 'right' }}><span style={{ color: '#002B98', fontSize: 10 }}>0% <FontAwesomeIcon icon={faCaretRight} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
               </Row>
 
             </div>
@@ -143,28 +163,28 @@ function App() {
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#FFDEDE', textAlign: 'right' }}><span style={{ color: '#EB5757', fontSize: 10 }}>-5% <ArrowDropDownIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#FFDEDE', textAlign: 'right' }}><span style={{ color: '#EB5757', fontSize: 10 }}>-5% <FontAwesomeIcon icon={faCaretDown} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 10, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#D9E9FF', textAlign: 'right' }}><span style={{ color: '#002B98', fontSize: 10 }}>0% <ArrowRightIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#D9E9FF', textAlign: 'right' }}><span style={{ color: '#002B98', fontSize: 10 }}>0% <FontAwesomeIcon icon={faCaretRight} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
                 <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
                 <Col className="colgris3">$15,000,000</Col>
-                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <ArrowDropUpIcon style={{ fontSize: 12 }} /></span></Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
               </Row>
 
             </div>
@@ -179,8 +199,8 @@ function App() {
             </Row>
           </div>
           </Container>
-          <hr></hr>
         </>
+        <br></br>
       </header>
     </div>
   );
