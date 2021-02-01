@@ -105,7 +105,7 @@ function App() {
         </div>
         <hr></hr>
         <>
-        <Container style={{ border: '1px solid #E0E0E0', width: '768px', height: '261px', padding: 15 }}>
+        <Container style={{ border: '1px solid #E0E0E0', width: '768px', height: 'auto', padding: 15 }}>
           <div>
             <Row>
             <Col className="col-align-izq col-md-auto"><span><Button className="button-enable" onClick={onClicdelDia}>Del dia</Button></span></Col>
@@ -125,35 +125,84 @@ function App() {
           <div id="tabla1" style={{ display: '' }}>
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4}></Col>
-                <Col xs={4} md={4} lg={4} style={{ fontSize: 10, fontWeight: 'bold' }}>Julio 25(USD $)</Col>
-                <Col style={{ fontSize: 10, fontWeight: 'bold' }}>Julio 26(USD $)</Col>
+                <Col xs={4} md={4} lg={4} style={{ fontSize: 10, fontWeight: 'bold' }}>18/12/2020</Col>
+                <Col style={{ fontSize: 10, fontWeight: 'bold' }}>21/12/2020</Col>
                 <Col style={{ fontSize: 10, fontWeight: 'bold' }}>Variación</Col>
               </Row>
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
-                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
-                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
-                <Col className="colgris3">$15,000,000</Col>
+                <Col xs={4} md={4} lg={4} className="colgris">Registro Operación Intl. Renta Variable</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$0</Col>
+                <Col className="colgris3">$29.815,00</Col>
                 <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
-                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
-                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
-                <Col className="colgris3">$15,000,000</Col>
+                <Col xs={4} md={4} lg={4} className="colgris">Registro Operación Intl. Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$0</Col>
+                <Col className="colgris3">$0</Col>
                 <Col className="colgris4" style={{ backgroundColor: '#FFDEDE', textAlign: 'right' }}><span style={{ color: '#EB5757', fontSize: 10 }}>-5% <FontAwesomeIcon icon={faCaretDown} /></span></Col>
               </Row>
 
-              <Row className="justify-content-md-center" style={{ marginBottom: 10, paddingLeft: 15, paddingRight: 15 }}>
-                <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
-                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
-                <Col className="colgris3">$15,000,000</Col>
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Registro Operación Intl. Público</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$303,923.00</Col>
+                <Col className="colgris3">$3,066,587.50</Col>
                 <Col className="colgris4" style={{ backgroundColor: '#D9E9FF', textAlign: 'right' }}><span style={{ color: '#002B98', fontSize: 10 }}>0% <FontAwesomeIcon icon={faCaretRight} /></span></Col>
               </Row>
 
               <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
                 <Col xs={4} md={4} lg={4} className="colgris">Primario Privado</Col>
-                <Col xs={4} md={4} lg={4} className="colgris2">$15,000,000</Col>
-                <Col className="colgris3">$15,000,000</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$5,830,000.00</Col>
+                <Col className="colgris3">$371,000.00</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Público</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$0.00</Col>
+                <Col className="colgris3">$0.00</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Primario Renta Variable Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$0.00</Col>
+                <Col className="colgris3">$0.00</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Reportos Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$668,180.99</Col>
+                <Col className="colgris3">$456,141.73</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Reportos Público</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$868,847.55</Col>
+                <Col className="colgris3">$943,367.25</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Secundario Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$0.00</Col>
+                <Col className="colgris3">$703,195.71</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Secundario Público</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$0.00</Col>
+                <Col className="colgris3">$0.00</Col>
+                <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
+              </Row>
+
+              <Row className="justify-content-md-center" style={{ marginBottom: 3, paddingLeft: 15, paddingRight: 15 }}>
+                <Col xs={4} md={4} lg={4} className="colgris">Secundario Renta Variable Privado</Col>
+                <Col xs={4} md={4} lg={4} className="colgris2">$0.00</Col>
+                <Col className="colgris3">$0.00</Col>
                 <Col className="colgris4" style={{ backgroundColor: '#E2F9ED', textAlign: 'right' }}><span style={{ color: '#139148', fontSize: 10 }}>5% <FontAwesomeIcon icon={faCaretUp} /></span></Col>
               </Row>
 
